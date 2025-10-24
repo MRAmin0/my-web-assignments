@@ -113,11 +113,20 @@ p { margin-bottom: 1rem; }
     align-items: center;
     height: 70px;
 }
+/* --- استایل جدید برای لوگو و آیکون --- */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* فاصله بین آیکون و متن */
 }
+.logo i {
+    color: var(--primary-color); /* رنگ آیکون */
+    font-size: 1.4rem; /* کمی کوچکتر از متن */
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
@@ -130,11 +139,18 @@ p { margin-bottom: 1rem; }
 .nav-menu a:hover {
     color: var(--primary-color);
 }
+/* --- فیکس رنگ متن دکمه "تماس" --- */
+.nav-menu a.btn-primary {
+    color: var(--white);
+}
+.nav-menu a.btn-primary:hover {
+    color: var(--white);
+    background: #0056b3; /* اطمینان از اینکه هاور هم درست کار می‌کند */
+}
 
-/* --- 2. Hero Section --- (عکس پس‌زمینه پایدار) --- */
+/* --- 2. Hero Section --- (عکس Unsplash) --- */
 .hero-section {
-    /* عکس پس‌زمینه از Pexels */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=60');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -201,8 +217,8 @@ p { margin-bottom: 1rem; }
 .about-image img {
     border-radius: 8px;
     width: 100%; 
-    height: 300px; /* ثابت کردن ارتفاع عکس */
-    object-fit: cover; /* جلوگیری از دفرمه شدن عکس */
+    height: 300px; 
+    object-fit: cover; 
 }
 
 /* --- 5. Portfolio (Grid) --- */
@@ -225,8 +241,8 @@ p { margin-bottom: 1rem; }
 }
 .portfolio-item img {
     width: 100%;
-    height: 250px; /* ثابت کردن ارتفاع عکس */
-    object-fit: cover; /* جلوگیری از دفرمه شدن عکس */
+    height: 250px; 
+    object-fit: cover; 
     display: block; 
 }
 .portfolio-info {
@@ -361,6 +377,11 @@ p { margin-bottom: 1rem; }
     .nav-menu {
         display: none; 
     }
+    .logo {
+        /* در موبایل لوگو را وسط می‌آوریم */
+        width: 100%;
+        justify-content: center;
+    }
     .hero-content h1 {
         font-size: 2.2rem;
     }
@@ -374,6 +395,6 @@ p { margin-bottom: 1rem; }
         transform: scale(1); 
     }
     .about-image img, .portfolio-item img {
-        height: auto; /* در موبایل اجازه میده ارتفاع اتوماتیک باشه */
+        height: auto; 
     }
 }
