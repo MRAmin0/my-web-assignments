@@ -124,13 +124,15 @@ p { margin-bottom: 1rem; }
     color: var(--primary-color);
 }
 
-/* --- 2. Hero Section --- */
+/* --- 2. Hero Section --- (تغییر یافته) --- */
 .hero-section {
-    background: var(--secondary-color);
-    /* یک عکس پس‌زمینه مناسب جایگزین کنید */
-    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('...'); */
+    /* یک لایه تیره روی عکس برای خوانایی متن + آدرس عکس */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlY2glMjBzdGFydHVwfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    
     color: var(--white);
-    min-height: 400px;
+    min-height: 450px; /* کمی ارتفاع را بیشتر کردیم */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,20 +186,21 @@ p { margin-bottom: 1rem; }
 }
 .about-image img {
     border-radius: 8px;
+    width: 100%; /* اطمینان از پر کردن فضا */
 }
 
-/* --- 5. Portfolio (Grid) --- (تغییر یافته) --- */
+/* --- 5. Portfolio (Grid) --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; /* کمی فاصله بیشتر */
+    gap: 1.5rem; 
 }
 .portfolio-item {
     background: var(--white);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    overflow: hidden; /* برای گرد شدن گوشه‌های تصویر */
+    overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .portfolio-item:hover {
@@ -206,7 +209,7 @@ p { margin-bottom: 1rem; }
 }
 .portfolio-item img {
     width: 100%;
-    display: block; /* حذف فاصله زیر عکس */
+    display: block; 
 }
 .portfolio-info {
     padding: 1.25rem;
@@ -316,11 +319,11 @@ p { margin-bottom: 1rem; }
 @media (max-width: 900px) {
     .features-grid,
     .pricing-grid,
-    .portfolio-grid { /* اضافه شده */
-        grid-template-columns: 1fr 1fr; /* دو ستونه در تبلت */
+    .portfolio-grid { 
+        grid-template-columns: 1fr 1fr; 
     }
     .about-flex {
-        flex-direction: column; /* زیر هم در تبلت */
+        flex-direction: column; 
         text-align: center;
     }
     .about-text .section-title {
@@ -340,9 +343,9 @@ p { margin-bottom: 1rem; }
     }
     .features-grid,
     .pricing-grid,
-    .portfolio-grid, /* اضافه شده */
+    .portfolio-grid, 
     .footer-grid {
-        grid-template-columns: 1fr; /* تک ستونه در موبایل */
+        grid-template-columns: 1fr; 
     }
     .price-card.featured {
         transform: scale(1); 
