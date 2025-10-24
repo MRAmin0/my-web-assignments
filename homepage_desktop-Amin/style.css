@@ -17,11 +17,10 @@
 }
 
 html {
-    scroll-behavior: smooth; /* اسکرول نرم بین بخش‌ها */
+    scroll-behavior: smooth; 
 }
 
 body {
-    /* --- تغییر فونت --- */
     font-family: 'Vazirmatn', sans-serif;
     line-height: 1.7;
     color: var(--text-color);
@@ -46,7 +45,7 @@ p { margin-bottom: 1rem; }
 .section-title {
     text-align: center;
     font-size: 2.2rem;
-    font-weight: 700; /* فونت ضخیم‌تر برای عنوان */
+    font-weight: 700; 
     margin-bottom: 3rem;
     color: var(--secondary-color);
 }
@@ -99,11 +98,14 @@ p { margin-bottom: 1rem; }
 
 /* --- 1. Header / Navigation --- */
 .main-header {
-    background: var(--white);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 .main-header .container {
     display: flex;
@@ -129,9 +131,10 @@ p { margin-bottom: 1rem; }
     color: var(--primary-color);
 }
 
-/* --- 2. Hero Section --- */
+/* --- 2. Hero Section --- (عکس پس‌زمینه پایدار) --- */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlY2glMjBzdGFydHVwfGVufDB8fDB8fHww');
+    /* عکس پس‌زمینه جایگزین شده با placehold.co */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/343A40/aaaaaa?text=NextMind+Hero+Banner');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -155,7 +158,7 @@ p { margin-bottom: 1rem; }
     font-weight: 300;
 }
 
-/* --- 3. Features / Services (Grid) --- (تغییر یافته) --- */
+/* --- 3. Features / Services (Grid) --- */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -169,15 +172,14 @@ p { margin-bottom: 1rem; }
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-/* --- استایل آیکون‌های جدید --- */
 .feature-card i {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1.5rem; /* فاصله بیشتر */
+    margin-bottom: 1.5rem; 
 }
 .feature-card h3 {
     margin-bottom: 1rem;
-    color: var(--secondary-color); /* تغییر رنگ برای تضاد با آیکون */
+    color: var(--secondary-color); 
     font-weight: 700;
 }
 
