@@ -146,7 +146,7 @@ p { margin-bottom: 1rem; }
     background: #0056b3; 
 }
 
-/* --- 2. Hero Section --- (مسیر اصلاح شد) --- */
+/* --- 2. Hero Section --- */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-bg.jpg');
     background-size: cover;
@@ -303,22 +303,103 @@ p { margin-bottom: 1rem; }
     margin-top: 1rem;
 }
 
-/* --- 7. Testimonials --- */
-.testimonial {
+/* ============================================== */
+/* --- بخش 7: استایل کروسل نظرات --- (جدید) --- */
+/* ============================================== */
+.carousel-container {
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5rem 5rem; /* فضای بیشتر در کناره‌ها برای دکمه‌ها */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden; /* مهم */
     text-align: center;
 }
-.testimonial blockquote {
-    font-size: 1.3rem;
+
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    /* ارتفاع ثابت برای جلوگیری از پرش صفحه */
+    min-height: 220px; 
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-slide {
+    display: none; /* مخفی کردن همه اسلایدها */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    /* انیمیشن محو شدن (Fade) */
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.testimonial-slide.active {
+    display: flex; /* نمایش اسلاید فعال */
+    opacity: 1;
+}
+
+.testimonial-slide .avatar {
+    font-size: 3.5rem; /* آیکون آواتار کاربر */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.testimonial-slide .quote-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: var(--border-color);
+    opacity: 0.7;
+}
+
+.testimonial-slide blockquote {
+    font-size: 1.2rem; 
     font-style: italic;
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-weight: 300;
+    line-height: 1.8;
 }
-.testimonial cite {
+
+.testimonial-slide cite {
     font-weight: 700;
     color: var(--secondary-color);
+}
+
+/* دکمه‌های ناوبری کروسل */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/* دکمه‌ها برعکس برای فارسی (RTL) */
+.prev-btn {
+    right: 1rem; 
+}
+.next-btn {
+    left: 1rem; 
 }
 
 /* --- 8. Footer (Grid) --- */
@@ -394,4 +475,18 @@ p { margin-bottom: 1rem; }
     .about-image img, .portfolio-item img {
         height: auto; 
     }
+
+    /* کروسل در موبایل */
+    .carousel-container {
+        padding: 2rem 1rem; /* پدینگ کمتر */
+    }
+    .carousel-btn {
+        /* دکمه‌ها را کوچکتر می‌کنیم */
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    .prev-btn { right: 0.5rem; }
+    .next-btn { left: 0.5rem; }
+    .testimonial-slide blockquote { font-size: 1rem; }
 }
