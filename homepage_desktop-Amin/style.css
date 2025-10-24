@@ -113,18 +113,17 @@ p { margin-bottom: 1rem; }
     align-items: center;
     height: 70px;
 }
-/* --- استایل جدید برای لوگو و آیکون --- */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--secondary-color);
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* فاصله بین آیکون و متن */
+    gap: 0.5rem; 
 }
 .logo i {
-    color: var(--primary-color); /* رنگ آیکون */
-    font-size: 1.4rem; /* کمی کوچکتر از متن */
+    color: var(--primary-color); 
+    font-size: 1.4rem; 
 }
 
 .nav-menu {
@@ -139,18 +138,17 @@ p { margin-bottom: 1rem; }
 .nav-menu a:hover {
     color: var(--primary-color);
 }
-/* --- فیکس رنگ متن دکمه "تماس" --- */
 .nav-menu a.btn-primary {
     color: var(--white);
 }
 .nav-menu a.btn-primary:hover {
     color: var(--white);
-    background: #0056b3; /* اطمینان از اینکه هاور هم درست کار می‌کند */
+    background: #0056b3; 
 }
 
-/* --- 2. Hero Section --- (عکس Unsplash) --- */
+/* --- 2. Hero Section --- (مسیر اصلاح شد) --- */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=60');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -378,7 +376,6 @@ p { margin-bottom: 1rem; }
         display: none; 
     }
     .logo {
-        /* در موبایل لوگو را وسط می‌آوریم */
         width: 100%;
         justify-content: center;
     }
