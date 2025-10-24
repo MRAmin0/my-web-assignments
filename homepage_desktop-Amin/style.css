@@ -21,7 +21,8 @@ html {
 }
 
 body {
-    font-family: 'Vazirmatn', sans-serif; /* فرض می‌کنیم فونت وزیر را دارید، وگرنه تاهما */
+    /* --- تغییر فونت --- */
+    font-family: 'Vazirmatn', sans-serif;
     line-height: 1.7;
     color: var(--text-color);
     background: var(--white);
@@ -45,6 +46,7 @@ p { margin-bottom: 1rem; }
 .section-title {
     text-align: center;
     font-size: 2.2rem;
+    font-weight: 700; /* فونت ضخیم‌تر برای عنوان */
     margin-bottom: 3rem;
     color: var(--secondary-color);
 }
@@ -59,6 +61,7 @@ p { margin-bottom: 1rem; }
     padding: 0.6rem 1.3rem;
     border-radius: 5px;
     transition: background 0.3s ease;
+    font-weight: 500;
 }
 .btn-primary:hover {
     background: #0056b3;
@@ -73,6 +76,7 @@ p { margin-bottom: 1rem; }
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    font-weight: 500;
 }
 .btn-cta:hover {
     background: #0056b3;
@@ -86,6 +90,7 @@ p { margin-bottom: 1rem; }
     padding: 0.6rem 1.3rem;
     border-radius: 5px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 .btn-outline:hover {
     background: var(--primary-color);
@@ -108,7 +113,7 @@ p { margin-bottom: 1rem; }
 }
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--secondary-color);
 }
 .nav-menu {
@@ -124,15 +129,13 @@ p { margin-bottom: 1rem; }
     color: var(--primary-color);
 }
 
-/* --- 2. Hero Section --- (تغییر یافته) --- */
+/* --- 2. Hero Section --- */
 .hero-section {
-    /* یک لایه تیره روی عکس برای خوانایی متن + آدرس عکس */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlY2glMjBzdGFydHVwfGVufDB8fDB8fHww');
     background-size: cover;
     background-position: center;
-    
     color: var(--white);
-    min-height: 450px; /* کمی ارتفاع را بیشتر کردیم */
+    min-height: 450px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,6 +144,7 @@ p { margin-bottom: 1rem; }
 }
 .hero-content h1 {
     font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: var(--white);
 }
@@ -148,9 +152,10 @@ p { margin-bottom: 1rem; }
     font-size: 1.25rem;
     margin-bottom: 2rem;
     color: #f0f0f0;
+    font-weight: 300;
 }
 
-/* --- 3. Features / Services (Grid) --- */
+/* --- 3. Features / Services (Grid) --- (تغییر یافته) --- */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -164,9 +169,16 @@ p { margin-bottom: 1rem; }
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
+/* --- استایل آیکون‌های جدید --- */
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem; /* فاصله بیشتر */
+}
 .feature-card h3 {
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* تغییر رنگ برای تضاد با آیکون */
+    font-weight: 700;
 }
 
 /* --- 4. About Us (Flexbox) --- */
@@ -186,7 +198,7 @@ p { margin-bottom: 1rem; }
 }
 .about-image img {
     border-radius: 8px;
-    width: 100%; /* اطمینان از پر کردن فضا */
+    width: 100%; 
 }
 
 /* --- 5. Portfolio (Grid) --- */
@@ -218,6 +230,7 @@ p { margin-bottom: 1rem; }
     font-size: 1.2rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 .portfolio-info p {
     font-size: 0.9rem;
@@ -246,10 +259,11 @@ p { margin-bottom: 1rem; }
 }
 .price-card h3 {
     font-size: 1.4rem;
+    font-weight: 700;
 }
 .price-card .price {
     font-size: 2.2rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--primary-color);
     margin: 1rem 0;
 }
@@ -280,9 +294,10 @@ p { margin-bottom: 1rem; }
     font-style: italic;
     color: var(--text-light);
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 .testimonial cite {
-    font-weight: bold;
+    font-weight: 700;
     color: var(--secondary-color);
 }
 
@@ -300,10 +315,12 @@ p { margin-bottom: 1rem; }
 .main-footer h4 {
     color: var(--white);
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 .main-footer p, .main-footer a {
     color: #ccc;
     margin-bottom: 0.5rem;
+    font-weight: 300;
 }
 .main-footer a:hover {
     color: var(--white);
