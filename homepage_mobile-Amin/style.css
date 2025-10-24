@@ -1,0 +1,232 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --brand-color: #ff6347; /* رنگ اصلی (نارنجی) */
+    --dark-blue: #003366;   /* رنگ متن */
+    --white: #ffffff;
+    --bg-gray: #f7f7f7;
+    --touch-size: 44px; /* حداقل اندازه لمسی */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-blue);
+    background-color: var(--white);
+    /* جلوگیری از اسکرول افقی */
+    overflow-x: hidden; 
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- Mobile Header --- */
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--brand-color);
+}
+
+.hamburger, .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--dark-blue);
+    /* اطمینان از اندازه مناسب لمسی */
+    min-width: var(--touch-size);
+    min-height: var(--touch-size);
+    padding: 0;
+}
+
+/* --- Mobile Navigation (Off-canvas) --- */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* شروع از خارج صفحه */
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--dark-blue);
+    color: var(--white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+    transition: right 0.3s ease-in-out;
+}
+.mobile-nav.active {
+    right: 0; /* نمایش منو */
+}
+
+.mobile-nav .close-btn {
+    color: var(--white);
+    position: absolute;
+    top: 1rem;
+    left: 1rem; /* در RTL left استفاده می‌شود تا سمت چپ دکمه بسته شدن باشد */
+    font-size: 2.5rem;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 6rem; /* فاصله از دکمه بستن */
+}
+
+.mobile-nav li a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid #004a8c;
+    transition: background-color 0.2s;
+}
+
+.mobile-nav li a:hover {
+    background-color: #004a8c;
+}
+
+/* --- Mobile Hero Section --- */
+.mobile-hero {
+    background: var(--bg-gray);
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+.mobile-hero h1 {
+    font-size: 2.2rem;
+}
+.mobile-hero p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* --- Touch-friendly Button --- */
+.touch-btn {
+    background-color: var(--brand-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    /* رعایت حداقل اندازه لمسی */
+    min-height: var(--touch-size);
+    transition: background-color 0.3s;
+}
+.touch-btn:hover {
+    background-color: #e05537;
+}
+
+/* --- Vertical Cards Section --- */
+.vertical-scroll-section {
+    padding: 3rem 1.5rem;
+}
+.vertical-scroll-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.mobile-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.mobile-card h3 {
+    color: var(--brand-color);
+}
+
+/* --- Mobile Footer --- */
+.mobile-footer {
+    background: var(--dark-blue);
+    color: #ccc;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+}
+.social-links {
+    margin-bottom: 1rem;
+}
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* --- Media Query (Desktop/Tablet) --- */
+/* (Mobile-First: این استایل‌ها فقط در صفحات بزرگتر اعمال می‌شوند) */
+@media (min-width: 768px) {
+    /* مخفی کردن منوی همبرگری در دسکتاپ */
+    .hamburger {
+        display: none;
+    }
+    
+    /* نمایش یک منوی افقی ساده در دسکتاپ */
+    .mobile-header {
+        padding: 1rem 2rem;
+    }
+    
+    /* منوی اصلی را از حالت fixed در می‌آوریم */
+    .mobile-nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        display: flex; /* نمایش افقی */
+        transform: none; /* ریست کردن ترنسفورم */
+        right: 0;
+    }
+
+    .mobile-nav .close-btn {
+        display: none;
+    }
+
+    .mobile-nav ul {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .mobile-nav li a {
+        color: var(--dark-blue);
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+    }
+    .mobile-nav li a:hover {
+        background-color: var(--bg-gray);
+    }
+    
+    /* چیدمان افقی کارت‌ها در دسکتاپ */
+    .vertical-scroll-section {
+        max-width: 1000px;
+        margin: auto;
+    }
+}

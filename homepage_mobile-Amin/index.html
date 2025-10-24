@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نسخه موبایل | Mobile First</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="mobile-header">
+        <div class="logo">MOBIAPP</div>
+        <button id="hamburger-btn" class="hamburger" aria-label="باز کردن منو">
+            ☰
+        </button>
+    </header>
+
+    <nav id="mobile-nav" class="mobile-nav">
+        <button id="close-btn" class="close-btn">×</button>
+        <ul>
+            <li><a href="#hero">خانه</a></li>
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#portfolio">نمونه‌کارها</a></li>
+            <li><a href="#contact">تماس</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero" class="mobile-hero">
+            <h1>تجربه کاربری آسان در موبایل شما</h1>
+            <p>طراحی شده برای استفاده راحت با یک دست.</p>
+            <button class="touch-btn">دانلود اپلیکیشن</button>
+        </section>
+
+        <section id="services" class="vertical-scroll-section">
+            <h2>خدمات ما</h2>
+            <div class="mobile-card">
+                <h3>طراحی رابط کاربری</h3>
+                <p>زیبا و کاربردی برای همه دستگاه‌ها.</p>
+            </div>
+            <div class="mobile-card">
+                <h3>برنامه‌نویسی موبایل</h3>
+                <p>توسعه اپلیکیشن‌های Native و PWA.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mobile-footer">
+        <div class="social-links">
+            <a href="#">اینستاگرام</a> | <a href="#">توییتر</a>
+        </div>
+        <p>© ۲۰۲۴ موبایل اپ</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

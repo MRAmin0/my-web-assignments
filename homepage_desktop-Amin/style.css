@@ -1,0 +1,257 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --brand-color: #6a11cb; /* رنگ اصلی (بنفش) */
+    --brand-secondary: #2575fc; /* رنگ دوم (آبی) */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+    --border-color: #eaeaea;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* اسکرول نرم */
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif; /* فونت وزیر (اگر در سیستم موجود باشد) */
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* --- Utility Classes --- */
+.section-padding {
+    padding: 5rem 0;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--brand-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #5a0eae;
+}
+
+.btn-cta {
+    background: linear-gradient(to right, var(--brand-secondary), var(--brand-color));
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.btn-cta:hover {
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--brand-color);
+    border: 2px solid var(--brand-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-outline:hover {
+    background-color: var(--brand-color);
+    color: var(--white);
+}
+
+/* --- Navigation --- */
+.desktop-nav {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--brand-color);
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--brand-color);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(to right, #6a11cb80, #2575fc80), url('https://via.placeholder.com/1500x800') center/cover no-repeat;
+    /* یک تصویر پس‌زمینه مناسب جایگزین کنید */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+}
+
+/* --- Features Section (Grid) --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.feature-card h3 {
+    font-size: 1.4rem;
+}
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* --- Pricing Section (Grid) --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.price-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.price-card.featured {
+    border-color: var(--brand-color);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(106, 17, 203, 0.1);
+}
+.price-card h3 {
+    font-size: 1.5rem;
+}
+.price-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--brand-color);
+    margin: 1rem 0;
+}
+.price-card .price span {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+.price-card ul {
+    margin: 2rem 0;
+}
+.price-card li {
+    margin-bottom: 0.75rem;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 4rem 0 2rem;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.footer-grid h4 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.footer-grid p, .footer-grid a {
+    color: #aaa;
+    line-height: 1.8;
+}
+.footer-grid a:hover {
+    color: var(--white);
+}
+
+/* --- Responsive (Mobile / Tablet) --- */
+@media (max-width: 900px) {
+    .features-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr; /* دو ستونه در تبلت */
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; /* در نسخه دسکتاپ فرض بر عدم وجود منوی همبرگری است */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .features-grid,
+    .pricing-grid,
+    .footer-grid {
+        grid-template-columns: 1fr; /* تک ستونه در موبایل */
+    }
+    .price-card.featured {
+        transform: scale(1);
+    }
+}
